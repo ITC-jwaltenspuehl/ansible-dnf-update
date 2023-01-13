@@ -1,10 +1,9 @@
---- 
- name: Update Linux (DNF)
- hosts: all
- become: yes
-   
- tasks:
-  -name: Upgrade all packages
-    yum:
-      name: '*'
-      state: latest
+---
+
+ - name: talk to all hosts just so we can learn about them
+   hosts: all
+   tasks:
+     - name: install updates
+       yum:
+         name: "*"
+         state: latest
