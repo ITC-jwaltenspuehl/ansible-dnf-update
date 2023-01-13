@@ -1,0 +1,7 @@
+--- 
+   name: Update Linux (DNF)
+   hosts: all
+   become: yes
+   tasks:
+    -name: Update Host (DNF)
+      yum: update -y
