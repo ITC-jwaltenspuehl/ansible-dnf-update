@@ -2,6 +2,9 @@
    name: Update Linux (DNF)
    hosts: all
    become: yes
+   
    tasks:
-    -name: Update Host (DNF)
-      yum: update -y
+    - name: Upgrade all packages
+      ansible.builtin.yum:
+        name: '*'
+        state: latest
